@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hill Climb Racing</title>
+
+<style>
+*{ box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:skyblue;
+    overflow:hidden;
+}
+
+.terrain{
+    position: fixed;
+    bottom: 315px;
+    width: 100%;
+    height: 220px;
+    z-index:1;
+}
+
+.grass{
+    position: fixed;
+    bottom:380px;
+    width:100%;
+    height:20px;
+    background:#6acb3d;
+    z-index:2;
+}
+
+.road{
+    position: fixed;
+    bottom:0px;
+    width:100%;
+    height:385px;
+    background:grey;
+    z-index:2;
+}
+
+.meter{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    height: 30vh;
+    right: 43%;
+    bottom: 80px;
+}
+
+.hill{
+    position:absolute;
+    bottom:90;
+    background:#6b4f2a;
+}
+
+.h1{
+    left:360px;
+    width:260px;
+    height:140px;
+    clip-path: polygon(0 100%, 100% 60%, 100% 100%);
+}
+
+.h2{
+    left:620px;
+    width:320px;
+    height:200px;
+    clip-path: polygon(0 100%, 50% 20%, 100% 100%);
+}
+
+.h3{
+    left:900px;
+    width:280px;
+    height:150px;
+    clip-path: polygon(0 100%, 100% 70%, 100% 100%);
+}
+
+.h4{
+    left:1280px;
+    width:360px;
+    height:220px;
+    clip-path: polygon(0 100%, 50% 10%, 100% 100%);
+}
+
+.h5{
+    left:1540px;
+    width:300px;
+    height:170px;
+    clip-path: polygon(0 100%, 100% 50%, 100% 100%);
+}
+
+.car{
+    position: fixed;
+    bottom: 465px;
+    left: 565px;
+    z-index:3;
+    transform: rotate(4deg);
+    transform-origin: bottom center;
+}
+
+.car-body{
+    width:180px;
+    height:50px;
+    background:red;
+    border-radius:12px 20px 10px 10px;
+    position:relative;
+}
+
+.car-top{
+    width:90px;
+    height:40px;
+    background:red;
+    position:absolute;
+    top:-30px;
+    left:40px;
+    border-radius:15px 15px 0 0;
+}
+
+.wheel{
+    width:40px;
+    height:40px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    bottom:-20px;
+}
+
+.wheel.left{ left:20px; }
+.wheel.right{ right:20px; }
+
+.buttons{
+    background:black;
+    color:white;
+    padding:20px;
+    width:100px;
+    height:140px;
+    border-radius:12px;
+    position: fixed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:4;
+    transition:.25s;
+}
+
+.buttons:hover{
+    background:#333;
+    transform:scale(1.08);
+}
+
+.brake{ left:70px; bottom:70px; }
+.race{ right:70px; bottom:70px; }
+
+.coin-ui{
+    position:fixed;
+    top:90px;
+    left:70px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    z-index:5;
+}
+
+.coin{
+    width:30px;
+    height:30px;
+    background:gold;
+    border-radius:50%;
+    box-shadow: inset 0 0 5px rgba(0,0,0,.4);
+}
+
+.coin-1{
+    position: fixed;
+    bottom: 420px;
+    right: 550px;
+}
+
+.coin-2{
+    position: fixed;
+    bottom: 450px;
+    right: 520px;
+}
+
+.coin-3{
+    position: fixed;
+    bottom: 420px;
+    right: 590px;
+}
+
+.coin-4{
+    position: fixed;
+    bottom: 420px;
+    left: 865px;
+}
+.coin-5{
+    position: fixed;
+    bottom: 448px;
+    left: 840px;
+}
+.coin-6{
+    position: fixed;
+    bottom: 475px;
+    left: 810px;
+}
+
+.fuel-ui{
+    position:fixed;
+    top:140px;
+    left:70px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    z-index:5;
+}
+
+.fuel-bar{
+    width:150px;
+    height:25px;
+    background:#ddd;
+    overflow:hidden;
+}
+
+.fuel-level{
+    width:70%;
+    height:100%;
+    background:#ff3b3b;
+}
+
+.fuel-pick{
+    position: fixed;
+    right: 230px;
+    top: 500px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="coin-ui">
+    <div class="coin"></div>
+    120,205
+    <div class="coin coin-1"></div>
+    <div class="coin coin-2"></div>
+    <div class="coin coin-3"></div>
+    <div class="coin coin-4"></div>
+    <div class="coin coin-5"></div>
+    <div class="coin coin-6"></div>
+</div>
+
+<div class="fuel-ui">
+    <div class="fuel-icon">
+        <img src="fuel.jpg" alt="fuel">
+    </div>
+    <div class="fuel-bar">
+        <div class="fuel-level"></div>
+    </div>
+</div>
+
+<div class="terrain">
+    <div class="grass"></div>
+    <div class="hill h1"></div>
+    <div class="hill h2"></div>
+    <div class="hill h3"></div>
+    <div class="hill h4"></div>
+    <div class="hill h5"></div>
+    <div class="road">
+        <div class="meter">
+            <img src="boost.jpg" alt="meter">
+        </div>
+    </div>
+</div>
+
+<div class="car">
+    <div class="car-body">
+        <div class="car-top"></div>
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+    </div>
+</div>
+
+<div class="fuel-pick">
+    <img src="fuel.jpg" alt="fuel">
+</div>
+
+<div class="buttons brake">brake</div>
+<div class="buttons race" onclick="location.href='car2.html'">race</div>
+
+</body>
+</html>
