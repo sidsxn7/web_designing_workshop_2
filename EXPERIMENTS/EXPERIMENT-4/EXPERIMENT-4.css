@@ -1,0 +1,40 @@
+body{
+ margin:0;
+ height:100vh;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ font-family:Verdana, Geneva, Tahoma, sans-serif;
+ background-color:burlywood;
+}
+
+.container{
+ background:white;
+ padding:30px;
+ border-radius:10px;
+ box-shadow:0 0 10px rgba(0,0,0,0.2);
+ text-align:center;
+}
+
+input{
+ padding:8px;
+ width:200px;
+}
+
+button{
+ padding:8px 15px;
+ background-color:cornflowerblue;
+ color:white;
+ border:none;
+ border-radius:5px;
+ cursor:pointer;
+}
+
+button:hover{
+background-color:#0056b3;
+}
+
+#result{
+ margin-top:15px;
+ font-weight:bold;
+} 
