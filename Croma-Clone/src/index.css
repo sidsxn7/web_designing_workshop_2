@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-croma-dark: #121212;
+  --color-croma-card: #1d1d1d;
+  --color-croma-green: #00e676;
+  --color-croma-text-muted: #9e9e9e;
+}
+
+/* Global resets for the luxury-tech dark theme */
+body {
+  background-color: var(--color-croma-dark);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
