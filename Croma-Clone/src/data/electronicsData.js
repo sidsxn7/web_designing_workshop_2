@@ -6,15 +6,10 @@ export const electronicsData = [
     price: 169900,
     slashedPrice: 199900,
     category: "Laptops",
-    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhtJp5Zc90x75MI0gbNM5DF3JXpEbLUo_zPA&s",
     rating: 4.8,
     reviewsCount: 312,
-    specs: {
-      "Processor": "Apple M3 Chip",
-      "RAM": "16GB Unified Memory",
-      "Storage": "512GB SSD",
-      "OS": "macOS Sonoma"
-    }
+    specs: { "Processor": "Apple M3 Chip", "RAM": "16GB Memory", "Storage": "512GB SSD", "OS": "macOS Sonoma" }
   },
   {
     id: "crm-mb-02",
@@ -23,14 +18,105 @@ export const electronicsData = [
     price: 124999,
     slashedPrice: 134999,
     category: "Mobiles",
-    image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=500",
+    image: "https://vasanthandco.in/UploadedFiles/productimages/20251022012320-71BiI-RQ--L-_SL1500_.jpg",
     rating: 4.7,
     reviewsCount: 184,
-    specs: {
-      "Display": "6.8-inch Dynamic AMOLED",
-      "Camera": "200MP Main Lens",
-      "Battery": "5000 mAh",
-      "Network": "5G Enabled"
-    }
+    specs: { "Display": "6.8-inch AMOLED", "Camera": "200MP Lens", "Battery": "5000 mAh", "Network": "5G" }
+  },
+  {
+    id: "crm-tv-03",
+    name: "Sony BRAVIA XR 55 Inch 4K Ultra HD Smart OLED TV",
+    brand: "Sony",
+    price: 132990,
+    slashedPrice: 249900,
+    category: "Televisions",
+    image: "data:image/jpeg;base64,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",
+    rating: 4.9,
+    reviewsCount: 95,
+    specs: { "Display": "OLED 4K", "Refresh Rate": "120Hz", "Speaker": "50W Dolby Atmos", "OS": "Google TV" }
+  },
+  {
+    id: "crm-hp-04",
+    name: "Sony WH-1000XM5 Wireless Headphones",
+    brand: "Sony",
+    price: 29990,
+    slashedPrice: 34990,
+    category: "Audio",
+    image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR2LGcoeYOFlZRuN7IblYswY6_CgaXpHGPfNTPn1jgSNb6kmU4GF4Lyfr-9C4A9APqeKaypFX8G2ec5-i_I_yhcO6iJ_6Y-BY-DgoaHcgJBDGGnsN4JJKXtUAg",
+    rating: 4.6,
+    reviewsCount: 1420,
+    specs: { "Type": "Over-Ear", "Noise Cancellation": "Industry Leading ANC", "Battery Life": "30 Hours", "Bluetooth": "v5.2" }
+  },
+  {
+    id: "crm-sw-05",
+    name: "Apple Watch Ultra 2 GPS + Cellular",
+    brand: "Apple",
+    price: 89900,
+    slashedPrice: 89900,
+    category: "Wearables",
+    image: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=500",
+    rating: 4.8,
+    reviewsCount: 210,
+    specs: { "Case Size": "49mm Titanium", "Battery Life": "Up to 36 hours", "Water Resistance": "100m", "Display": "Always-On Retina" }
+  },
+  {
+    id: "crm-lp-06",
+    name: "ASUS ROG Strix G16 Gaming Laptop",
+    brand: "ASUS",
+    price: 94990,
+    slashedPrice: 124990,
+    category: "Laptops",
+    image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500",
+    rating: 4.5,
+    reviewsCount: 88,
+    specs: { "Processor": "Intel Core i7 13th Gen", "Graphics": "NVIDIA RTX 4050 6GB", "RAM": "16GB DDR5", "Storage": "1TB SSD" }
+  },
+  {
+    id: "crm-tl-07",
+    name: "Apple iPad Air 11-inch (M2 Chip)",
+    brand: "Apple",
+    price: 59900,
+    slashedPrice: 59900,
+    category: "Mobiles",
+    image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500",
+    rating: 4.7,
+    reviewsCount: 124,
+    specs: { "Processor": "Apple M2 Chip", "Display": "11-inch Liquid Retina", "Storage": "128GB", "Connectivity": "Wi-Fi 6E" }
+  },
+  {
+    id: "crm-gc-08",
+    name: "Sony PlayStation 5 Slim Console",
+    brand: "Sony",
+    price: 44990,
+    slashedPrice: 54990,
+    category: "Gaming",
+    image: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=500",
+    rating: 4.9,
+    reviewsCount: 540,
+    specs: { "Storage": "1TB Custom SSD", "Graphics": "4K 120Hz Output", "HDR Support": "Yes", "Controller": "DualSense Wireless" }
+  },
+  {
+    id: "crm-sb-09",
+    name: "JBL Cinema SB271 Dolby Digital Wireless Soundbar",
+    brand: "JBL",
+    price: 12999,
+    slashedPrice: 16999,
+    category: "Audio",
+    image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=500",
+    rating: 4.4,
+    reviewsCount: 388,
+    specs: { "Power Output": "220W Max", "Subwoofer": "Wireless", "Channels": "2.1 Channel", "Connectivity": "HDMI ARC / Bluetooth" }
+  },
+  {
+    id: "crm-hd-10",
+    name: "SanDisk Extreme Portable 1TB Type-C SSD",
+    brand: "SanDisk",
+    price: 9999,
+    slashedPrice: 18500,
+    category: "Accessories",
+    image: "https://images.unsplash.com/photo-1618424181497-157f25b6ddd5?w=500",
+    rating: 4.6,
+    reviewsCount: 2105,
+    specs: { "Capacity": "1TB", "Interface": "USB 3.2 Gen 2", "Read Speed": "Up to 1050 MB/s", "Durability": "IP55 Water/Dust Resistant" }
   }
 ];

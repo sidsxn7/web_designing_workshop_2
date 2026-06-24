@@ -7,6 +7,9 @@ export const CartProvider = ({ children }) => {
     const localData = localStorage.getItem('croma_cart');
     return localData ? JSON.parse(localData) : [];
   });
+  
+  // State to hold the active search keyword globally
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     localStorage.setItem('croma_cart', JSON.stringify(cart));
@@ -35,7 +38,7 @@ export const CartProvider = ({ children }) => {
   const removeFromCart = (id) => setCart(prev => prev.filter(item => item.id !== id));
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, updateQty, removeFromCart }}>
+    <CartContext.Provider value={{ cart, addToCart, updateQty, removeFromCart, searchQuery, setSearchQuery }}>
       {children}
     </CartContext.Provider>
   );
